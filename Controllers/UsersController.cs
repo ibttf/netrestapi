@@ -11,6 +11,10 @@ public class UsersController : ControllerBase
 {
 
     //this is just basic file organization; actual routes start below.
+
+    //this lets you know that the service you're going to use is the UserService.cs.
+    //this tells you what the routes will actually do, like a controllers page on ruby backend.
+    //userservices also comes with error handling.
     private IUserService _userService;
     private IMapper _mapper;
 
