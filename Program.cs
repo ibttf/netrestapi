@@ -1,26 +1,44 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using System.Text.Json.Serialization;
+using WebApi.Helpers;
+using WebApi.Services;
 
-namespace Commander
+var builder = WebApplication.CreateBuilder(args);
+
+// add services to DI container
 {
-    public class Program
+    var services = builder.Services;
+    var env = builder.Environment;
+ 
+    services.AddDbContext<DataContext>();
+    services.AddCors();
+    services.AddControllers().AddJsonOptions(x =>
     {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+        // serialize enums as strings in api responses (e.g. Role)
+        x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+        // ignore omitted parameters on models to enable optional params (e.g. User update)
+        x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    });
+    services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+    // configure DI for application services
+    services.AddScoped<IUserService, UserService>();
 }
+
+var app = builder.Build();
+
+// configure HTTP request pipeline
+{
+    // global cors policy
+    app.UseCors(x => x
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader());
+
+    // global error handler
+    app.UseMiddleware<ErrorHandlerMiddleware>();
+
+    app.MapControllers();
+}
+
+app.Run("http://localhost:4000");
