@@ -9,6 +9,8 @@ using WebApi.Services;
 [Route("[controller]")]
 public class UsersController : ControllerBase
 {
+
+    //this is just basic file organization; actual routes start below.
     private IUserService _userService;
     private IMapper _mapper;
 
@@ -19,6 +21,7 @@ public class UsersController : ControllerBase
         _userService = userService;
         _mapper = mapper;
     }
+    
 
     [HttpGet]
     public IActionResult GetAll()
@@ -45,6 +48,7 @@ public class UsersController : ControllerBase
 
     [HttpPut("{id}")]
     //same as CreateRequest above, but for UpdateRequest.
+    //keep in mind that put request is used instead of patch request.
     public IActionResult Update(int id, UpdateRequest model)
     {
         _userService.Update(id, model);
