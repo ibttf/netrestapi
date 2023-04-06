@@ -794,11 +794,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/roylee0912/Development/projects/dotnet-6-crud-api/WebApi.csproj",
+      "projectUniqueName": "/Users/roylee0912/Development/projects/netrestapi/WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "/Users/roylee0912/Development/projects/dotnet-6-crud-api/WebApi.csproj",
+      "projectPath": "/Users/roylee0912/Development/projects/netrestapi/WebApi.csproj",
       "packagesPath": "/Users/roylee0912/.nuget/packages/",
-      "outputPath": "/Users/roylee0912/Development/projects/dotnet-6-crud-api/obj/",
+      "outputPath": "/Users/roylee0912/Development/projects/netrestapi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/roylee0912/.nuget/NuGet/NuGet.Config"

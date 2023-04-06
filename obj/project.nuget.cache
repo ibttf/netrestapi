@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j0jCKNjsiL5Jzlcq8QIfqcohcSCvjNw7fEco2OO6GDfT2OC8DFPXTMEDI0MYg2/C8GSunI7FX0K/bM4zAGUIbQ==",
+  "dgSpecHash": "BgFFUrjsVIau1wHN4Pr6YeYKaYVjmt166AFuameSoI8NEB51jF2i2YJ1foEpx2qQ/fSWPEoDHy44b3NgpBKHaQ==",
   "success": true,
-  "projectFilePath": "/Users/roylee0912/Development/projects/dotnet-6-crud-api/WebApi.csproj",
+  "projectFilePath": "/Users/roylee0912/Development/projects/netrestapi/WebApi.csproj",
   "expectedPackageFiles": [
     "/Users/roylee0912/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
     "/Users/roylee0912/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
