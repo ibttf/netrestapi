@@ -11,12 +11,10 @@ Defines the endpoints for the web application. Very similar to Ruby on Rails bac
 
 - Models:
 Define paramaters for incoming requests.
-In this case, we have CreateRequest.cs, which gives us the validations for a POST request to "/users," telling us what we can include in our request and what we can't.
-
-We also have UpdateRequest.cs, which works very similarly to CreateRequest.cs, but in the case of a PUT request to "/users/{:id}"
+In this case, we have CreateRequest.cs, which gives us the validations for a POST request to "/users," telling us what we can include in our request and what we can't. We also have UpdateRequest.cs, which works very similarly to CreateRequest.cs, but in the case of a PUT request to "/users/{:id}"
 
 - Services:
-UserServices.cs contains the brunt of the logic behind what the routes in the controller actually do. Responsibl
+UserServices.cs contains the brunt of the logic behind what the routes in the controller actually do. Responsible
 for all database interaction and, in this case, every operation.
 
 - Entities:
