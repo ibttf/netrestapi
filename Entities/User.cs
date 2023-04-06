@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 public class User
 {
-    // user model
+    // user model equivalent
 
     public int Id { get; set; }
     public string Title { get; set; }

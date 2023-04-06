@@ -8,10 +8,22 @@ using WebApi.Models.Users;
 
 public interface IUserService
 {
+    //this user service file is responsible for all database interaction and core business logic related to
+    //user crud operations.
+    
+    //get "/users"
     IEnumerable<User> GetAll();
+    
+    // get "/users/{:id}"
     User GetById(int id);
+
+    // post "/users"
     void Create(CreateRequest model);
+
+    // put "/users/{:id}"
     void Update(int id, UpdateRequest model);
+
+    //delete "/users/{:id}
     void Delete(int id);
 }
 
