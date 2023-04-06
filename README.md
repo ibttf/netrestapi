@@ -20,7 +20,7 @@ for all database interaction and, in this case, every operation.
 - Entities:
 Represent application data stored in the database. Organized similarly to a schema in ruby on rails.
 
-- Helpers
+- Helpers: 
 Bunch of miscellaneous files designed for error handling. Crafted from many different tutorials.
 
 
